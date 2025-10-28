@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes sparkle {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.5); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.5); 
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 1s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+  @apply text-dark;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.card-hover {
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
+
+
+.btn-hover {
+  @apply transition-all duration-200 transform hover:scale-105 active:scale-95;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.upload-area {
+  @apply border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center cursor-pointer transition-colors hover:border-accent hover:bg-white/50;
+}
+
+.upload-area.dragover {
+  @apply border-accent bg-white/50;
+}
+
+
+.outfit-card {
+  @apply bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+
+.color-swatch {
+  @apply w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110 cursor-pointer;
+}
+
+
+.occasion-tag {
+  @apply px-3 py-1.5 rounded-full text-sm transition-colors;
+}
+
+
+.action-btn {
+  @apply w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center transition-colors hover:bg-gray-100;
+}
+
+.saved-outfits {
+  @apply flex gap-3 overflow-x-auto pb-2;
+  scrollbar-width: thin;
+}
+
+.saved-outfit-item {
+  @apply flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden shadow-sm border border-gray-100 transition-transform hover:scale-105;
+}
+
+
+.filters-modal {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50;
+}
+
+.filters-content {
+  @apply bg-white rounded-2xl p-6 w-full max-w-md mx-4 max-h-[80vh] overflow-y-auto;
+}
+
+
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-t-accent border-r-accent border-b-transparent border-l-transparent rounded-full animate-spin;
+}
+
+
+.empty-state {
+  @apply text-center py-12 text-dark/70;
+}
+
+
+.image-preview {
+  @apply relative aspect-square w-full rounded-xl overflow-hidden bg-gray-100;
+}
+
+.image-preview img {
+  @apply w-full h-full object-cover;
+}
+
+
+.close-btn {
+  @apply absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white transition-colors;
+}
+
+
+.buy-btn {
+  @apply flex items-center gap-1 text-accent hover:text-accent/80 transition-colors;
+}
+
+
+.swipe-actions {
+  @apply flex justify-center gap-8 mt-6;
+}
+
+
+.sparkle-effect {
+  @apply absolute inset-0 flex items-center justify-center pointer-events-none;
+}
+
+
+.filter-chip {
+  @apply px-3 py-1.5 rounded-full text-sm transition-colors;
+}
+
+
+.apply-filters-btn {
+  @apply w-full py-3 bg-accent text-white rounded-full font-medium hover:bg-accent/90 transition-colors;
+}
